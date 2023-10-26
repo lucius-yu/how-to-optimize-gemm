@@ -2,7 +2,19 @@
 cmake_minimum_required (VERSION 2.8)
 
 # 项目信息
-project (Demo2)
+project (MMulti)
+
+# set
+set(CMAKE_C_STANDARD 11)
+set(CMAKE_CXX_STANDARD 11)
+
+set(CMAKE_C_COMPILER "gcc")
+set(CMAKE_CXX_COMPILER "g++")
+
+set(CMAKE_VERBOSE_MAKEFILE ON)
+
+# set C_FLAGS
+SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O2 -Wall -msse3 -lm")
 
 # 查找目录下的所有源文件
 # 并将名称保存到 DIR_SRCS 变量
