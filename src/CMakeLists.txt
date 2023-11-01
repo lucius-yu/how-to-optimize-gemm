@@ -18,7 +18,13 @@ SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O2 -Wall -msse3 -lm")
 
 # 查找目录下的所有源文件
 # 并将名称保存到 DIR_SRCS 变量
-aux_source_directory(. DIR_SRCS)
+# aux_source_directory(. DIR_SRCS)
+if(NOT NEW_SRC) 
+    SET(NEW_SRC "MMult0.c")
+    message(STATUS "NEW_SRC is not set. Use default value ${NEW_SRC}")
+endif()
+
+SET(DIR_SRCS "test_MMult.c" ${NEW_SRC})
 
 # 添加 math 子目录
 add_subdirectory(utils)
