@@ -14,11 +14,14 @@ Adaption by Lucius Yu
 ## Build project
 
 ```
-cd src/build
-cmake .. -DNEW_SRC=MMult1.c
+cd build
+cmake ../src -DNEW=MMult1 -DOUT=../data/MMult1
 make
+make test
 ```
 
+* In example, the MMult1.c will be compiled 
+* In example, the result will be saved into ../data/MMult1.csv
 * All cmake and make generated files will be in build directory. You can clean all of them
 * NEW_SRC need to be set as correct C source code which you implement matrix operation
 

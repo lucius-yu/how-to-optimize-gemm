@@ -28,7 +28,7 @@ int main()
   double 
     *a, *b, *c, *cref, *cold;    
   
-  printf( "MY_MMult = [\n" );
+  printf("p, gflops/sec, diff \n");
     
   for ( p=PFIRST; p<=PLAST; p+=PINC ){
     m = ( M == -1 ? p : M );
@@ -80,7 +80,7 @@ int main()
 
     diff = compare_matrices( m, n, c, ldc, cref, ldc );
 
-    printf( "%d %le %le \n", p, gflops / dtime_best, diff );
+    printf( "%d,  %le,  %le \n", p, gflops / dtime_best, diff );
     fflush( stdout );
 
     free( a );
@@ -89,8 +89,6 @@ int main()
     free( cold );
     free( cref );
   }
-
-  printf( "];\n" );
 
   exit( 0 );
 }
