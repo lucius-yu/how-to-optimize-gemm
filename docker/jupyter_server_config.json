@@ -1,0 +1,7 @@
+{
+  "ServerApp": {
+    "password": "argon2:$argon2id$v=19$m=10240,t=10,p=8$yufRsqe7KBN7V/WNFHxZ/w$XN7xJaN98OBlx7Z1gfJ5Wu4XzGJgImStY/oxcJSxbKw",
+    "root_dir": "/root/",
+	"open_browser": false
+  }
+}

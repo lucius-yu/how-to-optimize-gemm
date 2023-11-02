@@ -1,0 +1,13 @@
+# python alias
+alias python=python3
+alias pip=pip3
+
+alias cdrepos='cd /root/repos'
+alias cdlearn='cd /root/repos/github/learning'
+alias cdwork='cd /root/repos/github/oneDNN-learning'
+
+# utils
+## find file which contain string $1
+findfile(){
+    find . -type f -print | xargs grep $1
+}
