@@ -28,7 +28,7 @@ int main()
   double 
     *a, *b, *c, *cref, *cold;    
   
-  printf("p,gflops/sec,diff\n");
+  printf("p,gflops,diff\n");
     
   for ( p=PFIRST; p<=PLAST; p+=PINC ){
     m = ( M == -1 ? p : M );

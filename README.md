@@ -15,15 +15,14 @@ Adaption by Lucius Yu
 
 ```
 cd build
-cmake ../src -DNEW=MMult1 -DOUT=../data/MMult1
-make
-make test
+cmake ../src -DNEW=MMult1 -DOUT=../data/MMult1; make clean; make; make test
 ```
 
 * In example, the MMult1.c will be compiled 
 * In example, the result will be saved into ../data/MMult1.csv
 * All cmake and make generated files will be in build directory. You can clean all of them
-* NEW_SRC need to be set as correct C source code which you implement matrix operation
+* NEW need to be set as correct C source code which you implement matrix operation
+* It is better always to do clean before build and test
 
 ## how to clean cmake generated files
 
