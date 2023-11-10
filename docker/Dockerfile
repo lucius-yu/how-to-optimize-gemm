@@ -24,6 +24,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends python3 python3
 RUN pip3 install --upgrade pip
 RUN pip3 install jupyterlab==3.5.3
 RUN pip3 install pandas==2.0.3
+RUN pip3 install matplotlib==3.7.3
 
 # password 'admin' for login
 ADD jupyter_server_config.json /root/.jupyter/jupyter_server_config.json
