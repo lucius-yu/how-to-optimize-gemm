@@ -3,7 +3,7 @@
 # docker
 IMAGE_NAME=how-to-optimize-gemm
 CONTAINER_NAME=how-to-optimize-gemm
-PACKAGE_VERSION=0.0.1
+PACKAGE_VERSION=0.0.3
 DOCKER_FILE=Dockerfile
 
 # for release, there will be name space
@@ -30,9 +30,10 @@ SRC_PATH?=$(CURRENT_DIR)/../src
 DATA_PATH?=$(CURRENT_DIR)/../data
 BUILD_PATH?=$(CURRENT_DIR)/../build
 NOTEBOOK_PATH?=$(CURRENT_DIR)/../notebooks
+FIGURE_PATH?=$(CURRENT_DIR)/../figures
 
 run:
-	docker run -itd -v $(SRC_PATH):/root/src -v $(DATA_PATH):/root/data -v $(BUILD_PATH):/root/build -v $(NOTEBOOK_PATH):/root/notebooks --rm --network=host --name $(CONTAINER_NAME) $(NAMESPACE)$(IMAGE_NAME) bash
+	docker run -itd -v $(SRC_PATH):/root/src -v $(DATA_PATH):/root/data -v $(BUILD_PATH):/root/build -v $(NOTEBOOK_PATH):/root/notebooks -v $(FIGURE_PATH):/root/figures --rm --network=host --name $(CONTAINER_NAME) $(NAMESPACE)$(IMAGE_NAME) bash
 
 stop:
 	docker stop $(CONTAINER_NAME)

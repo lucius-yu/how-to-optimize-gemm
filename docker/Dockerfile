@@ -12,13 +12,17 @@ LABEL org.label-schema.vcs-ref=$VCS_REF \
 
 # build tools, common tools, dev tools, network tools
 RUN apt-get update && apt-get install -y --no-install-recommends build-essential gdb cmake && \
-    apt-get install -y --no-install-recommends bash procps && \
+    apt-get install -y --no-install-recommends bash procps curl && \
     apt-get install -y --no-install-recommends vim.tiny git libglib2.0-0 && \
     apt-get install -y --no-install-recommends wget iputils-ping less curl && \
-    apt-get autoremove -y && apt-get clean -y && rm -rf /var/lib/apt/lists/*
+    apt autoremove -y && apt-get clean -y && rm -rf /var/lib/apt/lists/*
 
 # install python
-RUN apt-get update && apt-get install -y --no-install-recommends python3 python3-pip
+RUN apt-get update || true && apt install -y --no-install-recommends python3 python3-pip
+
+# install nodejs and npm
+RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
+RUN apt-get install -y nodejs
 
 # install jupyterlab for data analysis and plotting
 RUN pip3 install --upgrade pip
@@ -37,6 +41,9 @@ RUN echo "set encoding=utf-8" >> /root/.vimrc
 
 # set work dir
 WORKDIR /root
+
+# add current path into PATH
+ENV PATH ".:$PATH"
 
 # Setup docker entry, docker-entry will call supervisord
 ADD docker-entrypoint.sh /bin/docker-entrypoint.sh

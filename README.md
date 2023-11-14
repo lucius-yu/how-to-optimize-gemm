@@ -1,14 +1,14 @@
 # How To Optimize Gemm wiki pages
 
-https://github.com/flame/how-to-optimize-gemm/wiki
+GEMM stands for General Matrix Multiplication. I cloned the repo https://github.com/flame/how-to-optimize-gemm/wiki
 
 Copyright by Prof. Robert van de Geijn (rvdg@cs.utexas.edu).
 
+Adapation by Lucius Yu for running this demo easily. 
 
-Adaption by Lucius Yu
-
-* Using CMake to build whole project
-* Using python to do plot and analysis
+* I use cmake to generate makefile for building
+* I change the output format to csv. which will be easy to handled with python code
+* I write simple python script load_data.py to explore the performance
 
 
 ## Build project
